@@ -1,0 +1,51 @@
+/laravel9-api-digi/node_modules
+/laravel9-api-digi/public/hot
+/laravel9-api-digi/public/storage
+/laravel9-api-digi/storage/*.key
+/laravel9-api-digi/vendor
+/laravel9-api-digi/.env
+/laravel9-api-digi/.env.backup
+/laravel9-api-digi/.phpunit.result.cache
+/laravel9-api-digi/Homestead.json
+/laravel9-api-digi/Homestead.yaml
+/laravel9-api-digi/npm-debug.log
+/laravel9-api-digi/yarn-error.log
+/laravel9-api-digi/.idea
+/laravel9-api-digi/.vscode
+
+
+# compiled output
+/nestjs-api/dist
+/nestjs-api/node_modules
+
+# Logs
+/nestjs-api/logs
+/nestjs-api/*.log
+/nestjs-api/npm-debug.log*
+/nestjs-api/pnpm-debug.log*
+/nestjs-api/yarn-debug.log*
+/nestjs-api/yarn-error.log*
+/nestjs-api/lerna-debug.log*
+
+# OS
+/nestjs-api/.DS_Store
+
+# Tests
+/nestjs-api/coverage
+/nestjs-api/.nyc_output
+
+# IDEs and editors
+/nestjs-api/.idea
+/nestjs-api/.project
+/nestjs-api/.classpath
+/nestjs-api/.c9/
+/nestjs-api/*.launch
+/nestjs-api/.settings/
+/nestjs-api/*.sublime-workspace
+
+# IDE - VSCode
+/nestjs-api/.vscode/*
+/nestjs-api/!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

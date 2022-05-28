@@ -1,0 +1,51 @@
+{
+	"boardOfDirectors": [
+		{
+			"id": 1,
+			"name": "Diretoria 1"
+		},
+		{
+			"id": 2,
+			"name": "Diretoria 2"
+		},
+		{
+			"id": 3,
+			"name": "Diretoria 3"
+		}
+	],
+	"supervisors": [
+		{
+			"boardId": 1,
+			"id": 10,
+			"name": "Supervisor 10"
+		},
+		{
+			"boardId": 2,
+			"id": 20,
+			"name": "Supervisor 20"
+		},
+		{
+			"boardId": 3,
+			"id": 30,
+			"name": "Supervisor 30"
+		}
+	],
+	"managers": [
+		{
+			"supervisorId": 10,
+			"id": 100,
+			"name": "Gerente 100"
+		},
+		{
+			"supervisorId": 20,
+			"id": 200,
+			"name": "Gerente 200"
+		},
+		{
+			"supervisorId": 30,
+			"id": 300,
+			"name": "Gerente 300"
+		}
+	]
+
+}
