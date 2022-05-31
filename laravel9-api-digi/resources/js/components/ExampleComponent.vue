@@ -9,11 +9,11 @@
                   <h1>Teste Laravel - vaga Fullstack!</h1>
 
                   <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+
                      <div class="row">
-                              
                         <div class="col-md-3 col-lg-3">
                            <div class="form-group">
-                              <select id="direct">
+                              <select id="direct" @change="getSupervisors">
                                  <option value="">select</option>
                                  <option v-for="option in directors" v-bind:value="option.id">{{ option.name }}</option>
                               </select> 
@@ -21,7 +21,8 @@
                         </div>
                         <div class="col-md-3 col-lg-3">
                            <div class="form-group">      
-                              <select name="supervisors" id="supervisors">
+                              <select name="supervisors" id="supervisors" @change="getManagers">
+                                 <option value="">select</option>
                                  <option v-for="option in supervisors" v-bind:value="option.id">{{ option.name }}</option>
                               </select>
                            </div>
@@ -29,6 +30,7 @@
                         <div class="col-md-3 col-lg-3">
                            <div class="form-group">      
                               <select name="managers" id="managers">
+                                 <option value="">select</option>
                                  <option v-for="option in managers" v-bind:value="option.id">{{ option.name }}</option>
                               </select> 
                            </div>
@@ -39,6 +41,13 @@
                            </div>
                         </div>
                      </div>
+                     <row>
+                        <div class="col-md-12 col-lg-12">
+                           {{values[0]}}<br>
+                           {{values[1]}}<br>
+                           {{values[2]}}<br>
+                        </div>
+                     </row>
                   </div>
 
                </div>
@@ -56,7 +65,8 @@
          return {
             directors: [],
             supervisors: [],
-            managers:[]
+            managers:[],
+            values:[]
          }
       },
 
@@ -66,8 +76,7 @@
       }, 
       methods:{
          greet: function (event) {
-            let value = $('#direct').val();
-            this.getSupervisors(value);
+            return this.values = [this.directors, this.supervisors, this.managers];
          },
          
          getDirectors(){
@@ -79,17 +88,18 @@
                console.log(error);
             });
          },
-         getSupervisors(val){
+         getSupervisors(event){
+            let val = event.target.value;
             axios.get('http://localhost:3000/api/supervisors/'+val)
             .then(response => {
                this.supervisors = response.data
-               this.getManagers(this.supervisors[0].id);
             }) 
             .catch(function (error) {
                console.log(error);
             });
          },
-         getManagers(val){
+         getManagers(event){
+            let val = event.target.value;
             axios.get('http://localhost:3000/api/managers/'+val)
             .then(response => {
                this.managers = response.data
