@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 const fs = require('fs')
 
 @Controller('api')
@@ -37,6 +37,18 @@ export class ApiController {
          const { managers } = JSON.parse(fs.readFileSync('./struture.json', 'utf8'));
 
          return managers.filter(s => s.supervisorId == id);
+
+      } catch (error) {
+         console.log(`ERROR: ${error}`)
+      }
+   }
+
+   @Get('/')
+   list() {
+
+      try {
+
+         return JSON.parse(fs.readFileSync('./struture.json', 'utf8'));
 
       } catch (error) {
          console.log(`ERROR: ${error}`)
